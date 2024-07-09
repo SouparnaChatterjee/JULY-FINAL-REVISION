@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+     vector<int> rearranged(nums.size());
+     int negIndex=0;
+     int posIndex=1;
+     for(auto it:nums)   
+     {
+        if(it<0)
+        {
+            rearranged[negIndex]=it;
+            negIndex+=2;
+        }
+        else
+        {
+            rearranged[posIndex]=it;
+            negIndex+=2;
+        }
+     }
+     return nums;
+    }
+};
