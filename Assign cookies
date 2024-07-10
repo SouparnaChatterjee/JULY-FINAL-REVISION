@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int findContentChildren(vector<int>& greed, vector<int>& cookie) {
+      sort(greed.begin(),greed.end())  ;
+      sort(cookie.begin(), cookie.end());
+      int satisfied=0;
+      int g=0;
+      for(int s=0;s<cookie.size() && g<greed.size();s++)
+      {
+        if(cookie[s]>=greed[g])
+        {
+            g++;
+            satisfied++;
+        }
+      }
+        return satisfied;
+    }
+};
